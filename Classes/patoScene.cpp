@@ -38,7 +38,7 @@ bool patoScene::init()
 	fif->setPosition(700, 0);
 	this->addChild(fif, 1);
 
-	juch = Sprite::create("juch.png");
+	juch = Sprite::create("juch-mastermind.png");
 	juch->setAnchorPoint(Vec2(0, 0));
 	juch->setPosition(1100, 0);
 	this->addChild(juch, 1);
@@ -141,10 +141,10 @@ void patoScene::update(float delta)
 	}
 	if (chestnutInHand)
 	{
-		// give juch a nut
+		// give juch-mastermind a nut
 		auto juchVec = juch->getPosition();
-		juchVec.x += 153;
-		juchVec.y += 243;
+		juchVec.x += 510; // 153;
+		juchVec.y += 305; // 243;
 		chestnut->setPosition(juchVec);
 		chestnut->setZOrder(0);
 	}
