@@ -1,6 +1,7 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "mainScreen.h"
 
 class  AppDelegate : private cocos2d::Application
 {

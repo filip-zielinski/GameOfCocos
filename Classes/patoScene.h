@@ -2,6 +2,8 @@
 
 #include "cocos2d.h"
 
+USING_NS_CC;
+
 class patoScene : public cocos2d::Layer
 {
 public:
@@ -10,20 +12,29 @@ public:
 	CREATE_FUNC(patoScene);
 
 	void update(float) override;
+	void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
+	void onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event);
 
 private:
+	enum
+	{
+		KEY_LEFT_BIT  = 0x1,
+		KEY_RIGHT_BIT = 0x2,
+		KEY_UP_BIT    = 0x4,
+		KEY_DOWN_BIT  = 0x8,
+		KEY_SPACE_BIT = 0x10
+	};
 	cocos2d::Sprite *fif;
 	cocos2d::Sprite *juch;
-
-	cocos2d::JumpBy *jumps[4];
 
 	float fifTime;
 	float juchTime;
 
-	float fifRand;
-	float juchRand;
+	float fifDebouncer;
+	float juchDebouncer;
 
-
+	std::map<EventKeyboard::KeyCode, unsigned int> keyMap;
+	unsigned int keyBitmap;
 };
 
 

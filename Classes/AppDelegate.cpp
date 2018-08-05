@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "patoScene.h"
 
 USING_NS_CC;
 
@@ -15,15 +14,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
 	if (!glview) {
-		glview = GLViewImpl::create("Really Pathological Game");
+		glview = GLViewImpl::create("Game of Cocos");
 		glview->setFrameSize(1920, 1080);
 		glview->setDesignResolutionSize(1920, 1080, ResolutionPolicy::EXACT_FIT);
 		director->setOpenGLView(glview);
 	}
 
-	auto scene = patoScene::createScene();
+	auto scene = mainScreen::createScene();
 	director->runWithScene(scene);
-
 	return true;
 }
 
@@ -32,4 +30,5 @@ void AppDelegate::applicationDidEnterBackground() {
 
 void AppDelegate::applicationWillEnterForeground() {
 }
+
 
