@@ -26,15 +26,24 @@ private:
 	};
 	cocos2d::Sprite *fif;
 	cocos2d::Sprite *juch;
+	cocos2d::Sprite *chestnut;
+	cocos2d::Label *scoreLabel;
 
 	float fifTime;
 	float juchTime;
+	float chestnutTime;
+
+	float chestnutInvisibleTime;
+	float chestnutInHandTime;
+	bool chestnutInHand;
 
 	float fifDebouncer;
 	float juchDebouncer;
-
+	
 	std::map<EventKeyboard::KeyCode, unsigned int> keyMap;
 	unsigned int keyBitmap;
+
+	int score;
 };
 
 

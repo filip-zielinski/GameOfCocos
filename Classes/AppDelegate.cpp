@@ -16,7 +16,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	if (!glview) {
 		glview = GLViewImpl::create("Game of Cocos");
 		glview->setFrameSize(1920, 1080);
-		glview->setDesignResolutionSize(1920, 1080, ResolutionPolicy::EXACT_FIT);
+		glview->setDesignResolutionSize(1920, 1080, ResolutionPolicy::SHOW_ALL);
 		director->setOpenGLView(glview);
 	}
 
